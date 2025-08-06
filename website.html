@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO-WolfDefansy</title>
+    <script src="script.js"></script>
+    <style>
+        :root {
+            --primary: #0d1117;
+            --secondary: #161b22;
+            --accent: #21262d;
+            --blue: #58a6ff;
+            --green: #238636;
+            --red: #f85149;
+            --orange: #d29922;
+            --purple: #a5a5ff;
+            --white: #ffffff;
+            --light-gray: #11151c;
+            --gray: #656d76;
+            --dark-gray: #24292f;
+            --border: #d0d7de;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --bg-color: #1a1a1a;
+            --card-bg-color: rgba(255, 255, 255, 0.1);
+            --border-color: rgba(255, 255, 255, 0.2);
+            --text-color: #f0f0f0;
+            --primary-color: #007aff;
+            --primary-light-color: #5ac8fa;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+
+
+            --cyb-part-primary-color: #004d99;
+            --cyb-part-secondary-color: #007bff;
+            --cyb-part-background-start: #0f2027;
+            --cyb-part-background-end: #203a43;
+            --cyb-part-text-color: #e0e7ff;
+            --cyb-part-glass-bg: rgba(255, 255, 255, 0.05);
+            --cyb-part-glass-border: rgba(255, 255, 255, 0.1);
+            --cyb-part-glass-shadow: rgba(0, 0, 0, 0.3);
+
+        }
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: linear-gradient(to bottom right, #141414, #03093a);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .header-icon img {
+            max-width: 110%;
+            max-height: 110%;
+            display: block;
+            border-radius: 10%;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="20" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .header-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .header-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        .header-description {
+            font-size: 1rem;
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .team-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 280px;
+        }
+
+        .team-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .team-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .team-stat {
+            text-align: center;
+        }
+
+        .team-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blue);
+            display: block;
+        }
+
+        .team-stat-label {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .wolfdefansy-icon {
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+        }
+
+        .youtube-icon {
+            background: linear-gradient(135deg, var(--red), var(--orange));
+        }
+
+        .contribute-btn {
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .contribute-btn:hover {
+            background: #2ea043;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .video-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .video-platform {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .platform-wolfdefansy {
+            background: rgba(165, 165, 255, 0.1);
+            color: var(--purple);
+            border: 1px solid rgba(165, 165, 255, 0.2);
+        }
+
+        .platform-youtube {
+            background: rgba(248, 81, 73, 0.1);
+            color: var(--red);
+            border: 1px solid rgba(248, 81, 73, 0.2);
+        }
+
+        .video-duration {
+            background: var(--light-gray);
+            color: var(--gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .video-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .video-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .video-footer {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--light-gray);
+        }
+
+        .video-tech {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: var(--dark-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .watch-btn {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .watch-btn:hover {
+            color: var(--primary);
+            transform: translateX(2px);
+        }
+
+        .empty-state {
+            background: white;
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .empty-state:hover {
+            border-color: var(--blue);
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .videos-grid {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .team-info {
+                width: 100%;
+            }
+        }
+
+        .navbar-header {
+            background-color: rgba(5, 3, 33, 0.67);
+            width: 100%;
+            height: 6%;
+            z-index: 10;
+            position: fixed;
+            display: flex;
+            backdrop-filter: blur(10px);
+            /* Applique le flou */
+
+
+        }
+
+        .navlinks {
+            color: white;
+            text-decoration: none;
+            font-size: 3vh;
+            height: 100%;
+            margin-right: 4%;
+
+        }
+
+        .nav {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        .contact-form {
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid black;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #488ae6;
+            transform: translateY(-2px);
+        }
+
+
+
+
+
+
+        .container_cube {
+            position: fixed;
+            width: 100%;
+            transform: rotate(-35deg);
+            z-index: 0;
+        }
+
+        .container_cube .box {
+            position: relative;
+            left: -100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: clac(100% + 400px);
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #000);
+            animation: animatesurface 1.5s ease-in-out infinite;
+
+        }
+
+        @keyframes animatesurface {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        .container_cube .box .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #03e9f4;
+            box-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                0 0 25px rgba(3, 233, 244, 1),
+                0 0 50px rgba(3, 233, 244, 1),
+                0 0 150px rgba(3, 233, 244, 1);
+            transform-origin: bottom right;
+            animation: animate 1.5s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+
+            }
+
+            60%,
+            70%,
+            80%,
+            100% {
+                transform: rotate(90deg);
+
+            }
+
+            65% {
+                transform: rotate(85deg);
+            }
+
+            75% {
+                transform: rotate(87.5deg);
+            }
+        }
+
+
+        .header {
+            position: relative;
+            /* ou absolute/fixed selon le contexte */
+            left: 0;
+            transform: translateX(0);
+            /* point de départ */
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+            /* optimisation des performances */
+        }
+
+
+
+        .end_container {
+            margin-top: 15%;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            /* Applique le flou */
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            background-color: #0000001e;
+
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* Ratio 16:9 = 9/16 = 0.5625 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+            border-radius: 30px;
+        }
+
+
+
+
+
+        .card-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px;
+            margin-top: 20%;
+        }
+
+        .animated-card {
+            width: 300px;
+            height: 500px;
+            background: rgba(18, 4, 98, 0.185);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease-out;
+            color: white;
+        }
+
+        .animated-card .card-content {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .animated-card h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .animated-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Initial positions for center cards (2 and 3) */
+        .animated-card:nth-child(2) {
+            transform: translateX(-150px);
+        }
+
+        .animated-card:nth-child(3) {
+            transform: translateX(150px);
+        }
+
+        /* Initial positions for outer cards (1 and 4) */
+        .animated-card:nth-child(1) {
+            transform: translateX(-250px);
+        }
+
+        .animated-card:nth-child(4) {
+            transform: translateX(250px);
+        }
+
+        /* Final state for cards */
+        .animated-card.is-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+
+        .tl-container-unique {
+            width: 80%;
+            margin-left: 10%;
+
+        }
+
+        .tl-title-unique {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-color);
+            letter-spacing: -1px;
+            padding-top: 5%;
+        }
+
+        .tl-timeline-unique {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .tl-timeline-unique::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            z-index: 1;
+        }
+
+
+
+        .tl-step-card-unique:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .tl-icon-circle-unique {
+            width: 60px;
+            height: 60px;
+            background: var(--card-bg-color);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: var(--primary-light-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .tl-step-card-unique:hover .tl-icon-circle-unique {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--text-color);
+            transform: scale(1.1);
+        }
+
+        .tl-card-content-unique {
+            background: var(--card-bg-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tl-card-content-unique h3 {
+            margin-top: 0;
+            color: var(--text-color);
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tl-card-content-unique p {
+            font-size: 1em;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tl-timeline-unique {
+                flex-direction: column;
+                padding-top: 0;
+            }
+
+            .tl-timeline-unique::before {
+                left: 30px;
+                top: 0;
+                width: 2px;
+                height: 100%;
+            }
+
+            .tl-step-card-unique {
+                text-align: left;
+                margin: 0 0 50px 0;
+                padding-left: 90px;
+            }
+
+            .tl-step-card-unique .tl-icon-circle-unique {
+                position: absolute;
+                left: 0;
+                margin: 0;
+            }
+
+            .tl-title-unique {
+                font-size: 2em;
+            }
+        }
+
+
+        .criteres_text_container {
+            width: 80%;
+            margin-left: 10%;
+            color: white;
+            margin-top: 5%;
+        }
+
+
+
+        @import 'https://fonts.googleapis.com/css?family=Lato:300';
+
+        .wrapper {
+            width: 100%;
+            margin-left: 10%;
+            height: 400px;
+            /* Hauteur fixe, tu peux ajuster ou utiliser 'auto' si besoin */
+            display: flex;
+            overflow: hidden;
+            margin: 2rem auto;
+            /* Centre le bloc si contenu dans une page */
+            border-radius: 20px;
+        }
+
+        .wrapper section {
+            flex: 1;
+            height: 100%;
+            filter: grayscale(50%);
+            transition: flex 0.5s ease, filter 0.5s ease;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        .wrapper section::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+            opacity: 1;
+            transition: 0.4s;
+        }
+
+        .wrapper section.sec01 {
+            background-image: url("pictures/part1.png");
+            pointer-events: none;
+        }
+
+        .wrapper section.sec02 {
+            background-image: url("pictures/image.png");
+        }
+
+        .wrapper section.sec03 {
+            background-image: url("pictures/part2.png");
+            pointer-events: none;
+        }
+
+        .wrapper:hover section:hover {
+            flex: 1.5;
+            filter: grayscale(0%);
+        }
+
+        .wrapper:hover section:hover::before {
+            opacity: 0;
+        }
+
+        .wrapper:hover section:not(:hover) {
+            flex: 1;
+        }
+
+        .alternative {
+            display: inline-block;
+            margin-top: 50%;
+            margin-left: 50%;
+            position: absolute;
+            width: 90%;
+            transform: translate(-50%, -50%);
+            font-family: "Lato", Arial, sans-serif;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            font-size: 2.4rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            background: rgba(0, 0, 0, 0.796);
+            padding: 0.6em 1em;
+            border-radius: 30px;
+        }
+
+        .alternative a {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            display: block;
+            padding: 0.6em 0;
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition-duration: 0.3s;
+        }
+
+        .alternative a:hover {
+            background: rgba(255, 255, 255, 0.6);
+            color: #333;
+        }
+
+
+
+
+        .separation {
+            width: 80%;
+            margin-left: 10%;
+        }
+
+
+        :root {
+            --bg: #0d1117;
+            --card-bg: rgba(255, 255, 255, 0.141);
+            --text: #ffffff;
+            --accent: #58a6ff;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .timeline-section {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .timeline-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--accent);
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+        }
+
+        .timeline-card {
+            flex: 1 1 200px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+            backdrop-filter: 4px;
+            color: white;
+        }
+
+        .timeline-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: var(--bg);
+            font-weight: bold;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+        }
+
+        .timeline-content p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .text-plane {
+            position: relative;
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            /* masque l'effet à l'intérieur */
+            color: white;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            background-color: #05031682;
+        }
+
+        .grid-container {
+            --grid: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            perspective: 100rem;
+            animation: rotate 100s linear infinite forwards;
+            z-index: 0;
+        }
+
+        .plane {
+            --dir: 1;
+            width: 300%;
+            height: 150%;
+            min-height: 70rem;
+            position: absolute;
+            bottom: 0;
+            transform-style: preserve-3d;
+            transform-origin: bottom center;
+            transform: translateX(-50%) rotateX(85deg);
+        }
+
+        .plane:last-child {
+            --dir: -1;
+            top: 0;
+            transform-origin: top center;
+            transform: translateX(-50%) rotateX(-85deg);
+        }
+
+        .plane:last-child>*::after {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.574), rgba(0, 0, 0, 0));
+        }
+
+        .plane>* {
+            transform-style: preserve-3d;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        .plane>*::before,
+        .plane>*::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .plane>*::before {
+            background-image:
+                repeating-linear-gradient(to left, #0033cc, #0033cc 4px, transparent 4px, transparent var(--grid)),
+                repeating-linear-gradient(to bottom, #0033cc, #0033cc 4px, transparent 4px, transparent var(--grid));
+            animation: move 1s linear infinite forwards;
+        }
+
+        .plane>*::after {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            z-index: 1;
+            transform: translateZ(1px);
+        }
+
+        .glow {
+            filter: blur(1rem);
+            z-index: 1;
+            mix-blend-mode: plus-lighter;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0px);
+            }
+
+            to {
+                transform: translateY(calc(var(--grid) * var(--dir)));
+            }
+        }
+
+        .recrut-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            overflow-y: auto;
+            backdrop-filter: blur(4px);
+        }
+
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+
+        section {
+            margin-top: 1.5rem;
+        }
+
+
+
+        .cyb-part-body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--cyb-part-background-start), var(--cyb-part-background-end), var(--cyb-part-primary-color));
+            background-size: 400% 400%;
+            animation: cyb-part-gradient-animation 15s ease infinite;
+            color: var(--cyb-part-text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Animation du dégradé */
+        @keyframes cyb-part-gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Conteneur principal */
+        .cyb-part-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        /* En-tête de section */
+        .cyb-part-section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cyb-part-section-header-title {
+            font-size: 3.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cyb-part-section-header-description {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        /* Cartes à effet "liquid glass" */
+        .cyb-part-glass-card {
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            background-color: var(--cyb-part-glass-bg);
+            border-radius: 15px;
+            border: 1px solid var(--cyb-part-glass-border);
+            box-shadow: 0 8px 32px 0 var(--cyb-part-glass-shadow);
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cyb-part-glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        /* Titres des cartes */
+        .cyb-part-card-title {
+            font-size: 2em;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--cyb-part-secondary-color);
+        }
+
+        .cyb-part-card-subtitle {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--cyb-part-secondary-color);
+        }
+
+        /* Listes à puces */
+        .cyb-part-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cyb-part-list-item {
+            padding-left: 2em;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .cyb-part-list-item::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+
+        /* Bouton d'appel à l'action */
+        .cyb-part-cta-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: var(--cyb-part-secondary-color);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        .cyb-part-cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Grille des programmes de partenariat */
+        .cyb-part-grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        /* Styles pour les écrans plus petits */
+        @media (max-width: 768px) {
+            .cyb-part-section-header-title {
+                font-size: 2.5em;
+            }
+
+            .cyb-part-section-header-description {
+                font-size: 1em;
+            }
+
+            .cyb-part-card-title {
+                font-size: 1.8em;
+            }
+
+            .cyb-part-glass-card {
+                padding: 25px;
+            }
+        }
+
+        .align {
+            text-align: justify;
+            hyphens: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar-header">
+        <nav class="nav">
+            <a href="#accueil" class="navlinks" onclick="showPage('accueil')">Le projet</a>
+            <a href="#recrutement" class="navlinks" onclick="showPage('recrutement')">Recrutement</a>
+            <a href="#ressources" class="navlinks" onclick="showPage('ressources')">Formation</a>
+            <a href="#partenariat" class="navlinks" onclick="showPage('partenariat')">Partenariats</a>
+            <a href="#contact" class="navlinks" onclick="showPage('contact')">Contact</a>
+        </nav>
+    </div>
+
+
+    <div id="accueil" class="page active-page">
+        <div class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>
+                            <div class="header-icon">
+                                <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                            </div>
+                            Welcome on board
+                        </h1>
+                        <p class="header-subtitle">Page principale dédiée au reccrutement et à l'information</p>
+                        <p class="header-description">
+                            Wolfdefansy, c’est une association qui parle aux lycéens du monde entier : entraide,
+                            apprentissage gratuit, défis techniques et ambiance bienveillante. Une porte d’entrée vers
+                            la cybersécurité, sans barrière ni jargon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_cube">
+            <div class="box">
+                <div class="cube"></div>
+            </div>
+
+        </div>
+        <div class="end_container">
+            <div class="text-container">
+
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MhPy7dgYAh4?si=qWj8t0nLpev2osEd"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write;loop; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="ytb_iframe"></iframe>
+            </div>
+        </div>
+
+
+        <div class="card-grid" id="card-grid">
+            <div class="animated-card">
+                <div class="card-content">
+                    <h2># 1</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="animated-card">
+                <div class="card-content">
+                    <h2># 2</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="animated-card">
+                <div class="card-content">
+                    <h2># 3</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="animated-card">
+                <div class="card-content">
+                    <h2># 4</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recrutement" class="page">
+
+        <div class="tl-container-unique">
+            <div class="header">
+                <div class="container">
+                    <div class="header-content">
+                        <div class="header-info">
+                            <h1>
+                                <div class="header-icon">
+                                    <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                                </div>
+                                Devenir bénévole chez WolfDefansy
+                            </h1>
+                            <p class="header-subtitle">Page principale dédiée au reccrutement et à l'information</p>
+                            <p class="header-description">
+                                Wolfdefansy s’appuie sur une dynamique collective forte, où la qualité des engagements
+                                et la durabilité des actions sont les piliers de notre vision.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="timeline-section">
+                <h2 class="timeline-title"></h2>
+                <div class="timeline-container">
+                    <div class="timeline-card">
+                        <div class="timeline-icon">1</div>
+                        <div class="timeline-content">
+                            <h3>Candidature</h3>
+                            <p class="align">Dites nous en plus sur votre profil et attendez la validation de notre
+                                équipe ! Nous vous recontacterons dans les 24H</p>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">2</div>
+                        <div class="timeline-content">
+                            <h3>Immersion</h3>
+                            <p class="align">Bénéficiez d'une première expérience immersive et inclusive : rencontrez
+                                notre équipe, explorez les coulisses et vivez l’esprit de notre association.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">3</div>
+                        <div class="timeline-content">
+                            <h3>Entrainement</h3>
+                            <p class="align">Vous avez encore des compétences à développer ? Pas de souci ! Accédez à
+                                nos ressources et laissez votre motivation faire la différence</p>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">4</div>
+                        <div class="timeline-content">
+                            <h3>Validation</h3>
+                            <p class="align">Une évaluation vous permettra de faire reconnaître vos compétences et de
+                                valider la qualité de votre engagement.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">5</div>
+                        <div class="timeline-content">
+                            <h3>Intégration</h3>
+                            <p class="align">Vous êtes prêt ? Rejoignez pleinement notre équipe, mettez vos talents en
+                                action et devenez un acteur clé du projet.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="text-plane">
+                <!-- effet dans la carte uniquement -->
+                <div class="grid-container">
+                    <div class="plane">
+                        <div class="grid"></div>
+                        <div class="glow"></div>
+                    </div>
+                    <div class="plane">
+                        <div class="grid"></div>
+                        <div class="glow"></div>
+                    </div>
+                </div>
+
+                <!-- contenu texte au-dessus de la grille -->
+                <div class="recrut-content">
+                    <h1 class="recrut_title">Nous avons besoin de vous !</h1>
+
+                    <section>
+                        <p>
+                            WolfDeFansy recrute des contributeurs pour le développement de son site web. Le profil
+                            souhaité
+                            n'est pas élitiste, mais les candidats doivent avoir une base en HTML, CSS et
+                            TypeScript/JavaScript.
+                        </p>
+                        <p>
+                            Le projet repose sur <strong>Ionic</strong> (code multi-plateforme) et
+                            <strong>Angular</strong> (bonne séparation du code). Avoir les bases est essentiel, pas
+                            besoin d’être expert.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="recrut_title">Les prérequis</h2>
+                        <ul>
+                            <li>Connaître les commandes de base de <strong>git</strong> (le repo est sur GitHub)</li>
+                            <li>Avoir des notions de <strong>programmation orientée objet</strong></li>
+                            <li>Savoir styliser un composant à partir d’une maquette (HTML & CSS)</li>
+                            <li>Aimer <strong>travailler en équipe</strong> (partage, communication, bonne humeur)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>
+                            Les débutants motivés sont acceptés. Vous bénéficierez du soutien de l'équipe et du Wiki,
+                            qui évoluera selon les besoins. L’apprentissage se fait en collaboration.
+                        </p>
+                        <h2 class="recrut_title">Sujets abordés au fil du projet</h2>
+                        <ul>
+                            <li>Création de composants</li>
+                            <li>Création de services (méthodes synchrones/asynchrones)</li>
+                            <li>Gestion des données avec <strong>RxJS</strong> ou <strong>Angular Signals</strong></li>
+                            <li>Réactions aux événements utilisateurs</li>
+                            <li>Affichage dynamique avec les directives Angular</li>
+                            <li>Et bien d’autres sujets passionnants</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>
+                            Pas besoin de tout savoir pour contribuer. L'essentiel est de savoir chercher : dans la doc,
+                            via Google, ou avec Copilot.
+                        </p>
+                        <p>
+                            Notre équipe est bienveillante. Motivation et implication sont les clés pour progresser avec
+                            nous.
+                        </p>
+                        <p><strong>Ne soyez plus un "loup solitaire", rejoignez la meute…</strong></p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="formation_selector">
+                <div class="wrapper">
+                    <section class="sec01"></section>
+                    <section class="sec02">
+                        <div class="alternative">Candidater<a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSf9jtGwfvdHbCXSxLQoWWXmzPJBB84NJ3omkv4WiSRXDDh8cg/viewform?pli=1"
+                                target="_blank">Une nouvelle avanture ?</a></div>
+                    </section>
+                    <section class="sec03"></section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="ressources" class="page">
+        <div class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>
+                            <div class="header-icon">
+                                <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                            </div>
+                            WolfDefansy-Developpeurs
+                        </h1>
+                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-description">
+                            Centralisez et partagez vos meilleures ressources de formation.
+                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                        </p>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-number" id="total-videos">0</span>
+                                <span class="team-stat-label">Formations</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-number">2</span>
+                                <span class="team-stat-label">Plateformes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="main-content">
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <div class="section-icon youtube-icon">1</div>
+                            HTML 5: Le squelette des sites webs
+                        </h2>
+                    </div>
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-header">
+                                <div class="video-meta">
+                                    <span class="video-platform platform-youtube">Grafikart</span>
+                                    <span class="video-duration">17 vidéos</span>
+                                </div>
+                                <h3 class="video-title">Apprendre l'HTML</h3>
+                                <p class="video-description">
+                                    L'HTML, pour HyperText Markup Language, constitue le langage de bases d'un site
+                                    internet. Ce n'est pas un langage de programmation mais un langage de balisage
+                                    qui
+                                    permet d'écrire de l'hypertexte et ainsi de définir la structure sémantique
+                                    d'une
+                                    page web.
+                                </p>
+                            </div>
+                            <div class="video-footer">
+                                <div class="video-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">Débutant</span>
+                                </div>
+                                <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLUeixVGPNl1uZNeJy4UY6qX"
+                                    class="watch-btn">
+                                    Regarder →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <div class="section-icon youtube-icon">2</div>
+                            CSS: L'indispensable de la personnalisation
+                        </h2>
+                    </div>
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-header">
+                                <div class="video-meta">
+                                    <span class="video-platform platform-youtube">Grafikart</span>
+                                    <span class="video-duration">31 vidéos</span>
+                                </div>
+                                <h3 class="video-title">Découverte du CSS</h3>
+                                <p class="video-description">
+                                    Le CSS, pour Cascading Style Sheets, est le langage utilisé pour mettre en forme
+                                    les
+                                    éléments d’un site web. Il permet de définir l’apparence des pages — couleurs,
+                                    polices, espacements, animations — en séparant le contenu (HTML) de la
+                                    présentation.
+                                    Grâce au CSS, il est possible d’adapter le rendu visuel d’un site à différents
+                                    écrans et supports, et de créer des interfaces modernes et harmonieuses.
+                                </p>
+                            </div>
+                            <div class="video-footer">
+                                <div class="video-tech">
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">Débutant</span>
+                                </div>
+                                <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLVjTZQocrMwKicV5wsZlRpj"
+                                    class="watch-btn">
+                                    Regarder →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <div class="section-icon youtube-icon">3</div>
+                            JS: Entre l'humain et la machine
+                        </h2>
+                    </div>
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-header">
+                                <div class="video-meta">
+                                    <span class="video-platform platform-youtube">YouTube</span>
+                                    <span class="video-duration">47 vidéos</span>
+                                </div>
+                                <h3 class="video-title">Apprendre le JavaScript</h3>
+                                <p class="video-description">
+                                    Le JavaScript est un langage de programmation orienté objet qui permet de rendre
+                                    les
+                                    pages web interactives et dynamiques. Il complète le duo HTML/CSS en ajoutant
+                                    des
+                                    fonctionnalités comme la gestion des événements, la manipulation du contenu à la
+                                    volée ou la communication avec des serveurs. C’est le moteur derrière les
+                                    animations, les formulaires intelligents, les jeux en ligne, et même certaines
+                                    applications mobiles.
+                                </p>
+                            </div>
+                            <div class="video-footer">
+                                <div class="video-tech">
+                                    <span class="tech-tag">JS</span>
+                                    <span class="tech-tag">Intermédiaire</span>
+                                </div>
+                                <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLXgsTQE_1PpRkC_yX47ZcGV"
+                                    class="watch-btn">
+                                    Regarder →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <div class="section-icon youtube-icon">4</div>
+                            Angular: Du web vers le mobile
+                        </h2>
+                    </div>
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-header">
+                                <div class="video-meta">
+                                    <span class="video-platform platform-youtube">
+                                        Coulisses Tech</span>
+                                    <span class="video-duration">53 vidéos</span>
+                                </div>
+                                <h3 class="video-title">Apprendre Angular | Introduction à Angular et concepts
+                                    avancés
+                                </h3>
+                                <p class="video-description">
+                                    Angular est un framework de développement Web, open-source, développé et géré
+                                    par
+                                    Google. Ce framework a été mis en place pour répondre à la plupart des défis
+                                    rencontrés dans le développement des applications Web à une seule page.
+                                </p>
+                            </div>
+                            <div class="video-footer">
+                                <div class="video-tech">
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">Intérmédiaire</span>
+                                </div>
+                                <a href="https://www.youtube.com/playlist?list=PLrbLGOB571zeR7FUQifKmjUpT4ImldCPt"
+                                    class="watch-btn">
+                                    Regarder →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="partenariat" class="page">
+        <div class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>
+                            <div class="header-icon">
+                                <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                            </div>
+                            WolfDefansy-Developpeurs
+                        </h1>
+                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-description">
+                            Centralisez et partagez vos meilleures ressources de formation.
+                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                        </p>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-number" id="total-videos">0</span>
+                                <span class="team-stat-label">Formations</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-number">2</span>
+                                <span class="team-stat-label">Plateformes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cyb-part-container">
+            <header class="cyb-part-section-header">
+                <h1 class="cyb-part-section-header-title">Devenez acteurs du projet</h1>
+
+            </header>
+
+            <div class="cyb-part-glass-card">
+                <h2 class="cyb-part-card-title">Pourquoi nous rejoindre ?</h2>
+                <p>
+                    Nos partenariats sont fondés sur la croissance mutuelle et l'excellence. Nous offrons une expertise
+                    de pointe et des outils pour vous aider à prospérer.
+                </p>
+                <ul class="cyb-part-list">
+                    <li class="cyb-part-list-item">Accès privilégié à nos solutions de **cybersécurité** innovantes.
+                    </li>
+                    <li class="cyb-part-list-item">Programmes de formation et de certification pour vos équipes
+                        commerciales et techniques.</li>
+                    <li class="cyb-part-list-item">Support marketing et opportunités de co-branding pour accroître votre
+                        visibilité.</li>
+                    <li class="cyb-part-list-item">Modèles de partenariat flexibles adaptés à votre activité.</li>
+                </ul>
+            </div>
+
+            <div class="cyb-part-glass-card">
+                <h2 class="cyb-part-card-title">Nos Programmes de Partenariat</h2>
+                <p>
+                    Que vous soyez un intégrateur, un revendeur ou un éditeur, nous avons un programme conçu pour
+                    maximiser votre réussite.
+                </p>
+                <div class="cyb-part-grid-cards">
+                    <div class="cyb-part-glass-card">
+                        <h3 class="cyb-part-card-subtitle">Partenaire de Distribution</h3>
+                        <p>Revendez nos solutions de sécurité à vos clients et bénéficiez de marges attractives ainsi
+                            que de notre soutien commercial.</p>
+                    </div>
+                    <div class="cyb-part-glass-card">
+                        <h3 class="cyb-part-card-subtitle">Partenaire Technologique</h3>
+                        <p>Intégrez notre technologie de pointe à vos propres produits pour enrichir votre offre et
+                            innover sur le marché.</p>
+                    </div>
+                    <div class="cyb-part-glass-card">
+                        <h3 class="cyb-part-card-subtitle">Partenaire de Conseil</h3>
+                        <p>Bénéficiez de notre expertise pour accompagner vos clients dans leur stratégie de
+                            cybersécurité et la mise en œuvre de leurs projets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cyb-part-glass-card" style="text-align: center;">
+                <h2 class="cyb-part-card-title">Prêt à Collaborer ?</h2>
+                <p>
+                    Contactez notre équipe dédiée aux partenariats pour découvrir comment nous pouvons travailler
+                    ensemble pour sécuriser l'avenir.
+                </p>
+                <a href="mailto:contact@wolfdefansy.org" class="cyb-part-cta-button">Soumettre une candidature</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="contact" class="page">
+        <div class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>
+                            <div class="header-icon">
+                                <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                            </div>
+                            WolfDefansy-Developpeurs
+                        </h1>
+                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-description">
+                            Centralisez et partagez vos meilleures ressources de formation.
+                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                        </p>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-number" id="total-videos">0</span>
+                                <span class="team-stat-label">Formations</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-number">2</span>
+                                <span class="team-stat-label">Plateformes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-content">
+                <div class="contact-form">
+                    <h2>Nous contacter</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Fonction pour afficher une page et masquer les autres
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+        }
+
+        // Animation à l'affichage
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.video-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach((card, i) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${i * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // Mise à jour du nombre de vidéos
+        function updateVideoCount() {
+            const totalVideos = document.querySelectorAll('.video-card').length;
+            const countElement = document.getElementById('total-videos');
+            if (countElement) {
+                countElement.textContent = totalVideos;
+            }
+        }
+
+        updateVideoCount();
+    </script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.querySelector('.header').style.transform = `translateX(-${scrollY}px)`;
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cardGrid = document.getElementById("card-grid");
+            const cards = document.querySelectorAll(".animated-card");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // The center cards (2 and 3) appear first
+                        cards[1].classList.add("is-visible");
+                        cards[2].classList.add("is-visible");
+
+                        // Then the outer cards (1 and 4)
+                        setTimeout(() => {
+                            cards[0].classList.add("is-visible");
+                            cards[3].classList.add("is-visible");
+                        }, 700);
+                    } else {
+                        // Reset the cards when the container is no longer visible
+                        cards.forEach(card => {
+                            card.classList.remove("is-visible");
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(cardGrid);
+        });
+    </script>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".timeline-card");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const card = entry.target;
+                    if (entry.isIntersecting) {
+                        // Forcer la réinitialisation de l'animation
+                        card.classList.remove("visible");
+
+                        // Forcer le reflow pour que la classe soit bien reappliquée
+                        void card.offsetWidth;
+
+                        card.classList.add("visible");
+                    } else {
+                        // Optionnel : si tu veux cacher à nouveau quand elle sort de l'écran
+                        card.classList.remove("visible");
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            cards.forEach((card, i) => {
+                // Animation delay en cascade
+                card.style.transitionDelay = `${i * 200}ms`;
+                observer.observe(card);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
