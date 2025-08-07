@@ -426,7 +426,7 @@
         .navlinks {
             color: white;
             text-decoration: none;
-            font-size: 100%;
+            font-size: 140%;
             height: 100%;
             margin-right: 4%;
 
@@ -441,82 +441,82 @@
             display: none;
         }
 
-       .hamburger {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-}
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
-/* Overlay flouté */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
-}
+        /* Overlay flouté */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease;
+        }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+        /* Responsive styles */
+        @media (max-width: 768px) {
 
-  .sec01{
-    display: none;
-  }
+            .sec01 {
+                display: none;
+            }
 
-  .sec03{
-    display: none;
-  }
+            .sec03 {
+                display: none;
+            }
 
-  .sec02{
-    border-radius: 20px;
-  }
+            .sec02 {
+                border-radius: 20px;
+            }
 
 
-  
-    
-  .navlinks{
-    margin-right: 60%;
-    margin-top: -100%;
-    margin-bottom: 30%;
-  }
 
-  .navlinks-container {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 250px;
-    background-color: rgba(5, 3, 33, 0.95);
-    flex-direction: row;
-    padding: 80px 20px;
-    gap: 30px;
-    transition: right 0.4s ease;
-    z-index: 1000;
-    justify-content: left;
-  }
 
-  .navlinks-container.show {
-    right: 0;
-  }
+            .navlinks {
+                margin-right: 60%;
+                margin-top: -100%;
+                margin-bottom: 30%;
+            }
 
-  .overlay.show {
-    opacity: 1;
-    visibility: visible;
-  }
+            .navlinks-container {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 250px;
+                background-color: rgba(5, 3, 33, 0.95);
+                flex-direction: row;
+                padding: 80px 20px;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 1000;
+                justify-content: left;
+            }
 
-  .hamburger {
-    display: block;
-  }
-}
+            .navlinks-container.show {
+                right: 0;
+            }
+
+            .overlay.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
 
 
         .active-page {
@@ -716,12 +716,14 @@
             padding: 50px;
             margin-top: 20%;
             width: 100%;
-            flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
+            flex-wrap: wrap;
+            /* Permet aux cartes de passer à la ligne */
         }
 
         .animated-card {
             width: 300px;
-            max-width: 90vw; /* S’adapte à l’écran */
+            max-width: 90vw;
+            /* S’adapte à l’écran */
             height: 500px;
             background: rgba(18, 4, 98, 0.185);
             backdrop-filter: blur(15px);
@@ -881,14 +883,15 @@
         /* Responsive Design */
         @media (max-width: 768px) {
 
-            .end_container{
+            .end_container {
                 background-color: #5f212100;
                 backdrop-filter: blur(0px);
             }
 
-            .grid-container{
+            .grid-container {
                 display: none;
             }
+
             .tl-timeline-unique {
                 flex-direction: column;
                 padding-top: 0;
@@ -1223,7 +1226,7 @@
             z-index: 2;
             padding: 2rem;
             overflow-y: auto;
-            backdrop-filter: blur(4px);            
+            backdrop-filter: blur(4px);
         }
 
 
@@ -1402,7 +1405,8 @@
             }
         }
 
-        .align {
+        .align,
+        .clean {
             text-align: justify;
             hyphens: auto;
         }
@@ -1411,23 +1415,24 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <div class="navbar-header">
         <nav class="nav">
             <button class="hamburger" aria-label="Menu">&#9776;</button>
             <div class="overlay"></div>
             <div class="navlinks-container">
-            <a href="#accueil" class="navlinks" onclick="showPage('accueil')">Le projet</a>
-            <a href="#recrutement" class="navlinks" onclick="showPage('recrutement')">Recrutement</a>
-            <a href="#ressources" class="navlinks" onclick="showPage('ressources')">Formation</a>
-            <a href="#partenariat" class="navlinks" onclick="showPage('partenariat')">Partenariats</a>
-            <a href="#contact" class="navlinks" onclick="showPage('contact')">Contact</a>
-            <a href="https://wolfdefansy.org" class="navlinks" target="_blank">CTF-TIME</a>
+                <!-- Navigation links for each section -->
+                <a href="#accueil" class="navlinks" onclick="showPage('accueil')">The Project</a>
+                <a href="#recrutement" class="navlinks" onclick="showPage('recrutement')">Recruitment</a>
+                <a href="#ressources" class="navlinks" onclick="showPage('ressources')">Training</a>
+                <a href="#partenariat" class="navlinks" onclick="showPage('partenariat')">Partnerships</a>
+                <a href="#contact" class="navlinks" onclick="showPage('contact')">Contact</a>
+                <a href="https://wolfdefansy.org" class="navlinks" target="_blank">CTF-TIME</a>
             </div>
         </nav>
     </div>
 
-
-
+    <!-- Home Page -->
     <div id="accueil" class="page active-page">
         <div class="header">
             <div class="container">
@@ -1439,24 +1444,28 @@
                             </div>
                             Welcome on board
                         </h1>
-                        <p class="header-subtitle">Page principale dédiée au reccrutement et à l'information</p>
+                        <p class="header-subtitle">Main page for recruitment and info</p>
                         <p class="header-description">
-                            Wolfdefansy, c’est une association qui parle aux lycéens du monde entier : entraide, apprentissage gratuit, défis techniques et ambiance bienveillante. Une porte d’entrée vers la cybersécurité, sans barrière ni jargon.
+                            Wolfdefansy is an association for high schoolers worldwide, offering support, free learning,
+                            technical challenges, and a friendly atmosphere, all on a free CTF platform. Our mission is
+                            to make cybersecurity accessible to everyone, regardless of background or experience. We
+                            believe in sharing knowledge, helping each other, and building a strong, inclusive
+                            community. Join us to discover, learn, and grow in cybersecurity, with no barriers or
+                            limits.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Decorative animated cube -->
         <div class="container_cube">
             <div class="box">
                 <div class="cube"></div>
             </div>
-
         </div>
+        <!-- Video and intro container -->
         <div class="end_container">
-            <div class="text-container">
-
-            </div>
+            <div class="text-container"></div>
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/MhPy7dgYAh4?si=qWj8t0nLpev2osEd"
                     title="YouTube video player" frameborder="0"
@@ -1464,61 +1473,80 @@
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="ytb_iframe"></iframe>
             </div>
         </div>
-
-
+        <!-- Project values cards -->
         <div class="card-grid" id="card-grid">
             <div class="animated-card">
                 <div class="card-content">
                     <p class="align">
-                         WolfDefansy est avant tout pensé pour démocratiser l'acces à l'apprentissage de la cybersécurité, et de le simplifier pedagogiquement. <br>
-                          Naturellement déstiné aux étudiants, l'objectif du projet est de guider les plus jeunes en leurs proposant un parcous d'aprentissage complet, et centralisé.</p>
-                    <h2>Solidarité</h2>
+                        WolfDefansy makes cybersecurity learning accessible and simple for all. <br><br> Our mission is
+                        to guide students with a complete, centralized path, offering support, resources, and a
+                        welcoming community for everyone interested in learning.
+                    </p>
+                    <br>
+                    <h2>Solidarity</h2>
                 </div>
             </div>
             <div class="animated-card">
                 <div class="card-content">
-                    <p class="align">Egalement propulsée par cette flame qu'est notre passion, le projet est en developpment actif, suivi par pres de 25 bénévoles compétents et passionés. <br>
-                    Nous acceuillons dans notre équipe, en partie étudiante, des developpeurs, des pentesters, des graphistes et des monteurs vidéos.</p>
+                    <p class="align">
+                        Driven by passion, the project is developed by over 25 volunteers. <br> Our team welcomes
+                        developers, pentesters, designers, and editors. We believe in sharing knowledge, growing
+                        together, and building a strong, supportive environment for all.
+                    </p>
+                    <br>
                     <h2>Passion</h2>
                 </div>
             </div>
             <div class="animated-card">
                 <div class="card-content">
-                    <p class="align">Car la qualité est l'une de nos préocupations principale, nous employons des méthodes de développement professionelles et structurées. <br>
-                    Entre autres, nous utilisons slack, github, notion. Nos 5 équipes se constituent de chefs d'équipes, tous ayant une experience professionelle importante.</p>
-                    <h2>Rigeure</h2>
+                    <p class="align">
+                        Quality matters: we use professional, structured methods. We work with Slack, GitHub, and
+                        Notion. <br> Each of our five teams is led by experienced leaders, ensuring that our work is
+                        organized, efficient, and always improving for everyone.
+                    </p>
+                    <br>
+                    <h2>Rigor</h2>
                 </div>
             </div>
             <div class="animated-card">
                 <div class="card-content">
-                    <p class="align">WolfDefansy est sans cesse en quete d'amélioration, qu'elle soit technique ou opérationelle. <br><br>
-                    A thermes, nous souhaitons nous étendre à l'internationale, et permettre, a plus de personnes, d'apprendre et de bénéficier des meilleures ressources partagés par des partenaires d'exception</p>
+                    <p class="align">
+                        WolfDefansy always seeks improvement, both technical and operational. <br><br> Our long-term
+                        goal is to expand globally and share the best resources, empowering students everywhere to
+                        learn, grow, and succeed in cybersecurity together.
+                    </p>
+                    <br>
                     <h2>Ambition</h2>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Recruitment Page -->
     <div id="recrutement" class="page">
         <div class="header">
-                <div class="container">
-                    <div class="header-content">
-                        <div class="header-info">
-                            <h1>
-                                <div class="header-icon">
-                                    <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
-                                </div>
-                                WolfDefansy
-                            </h1>
-                            <p class="header-subtitle">Page principale dédiée au reccrutement et à l'information</p>
-                            <p class="header-description">
-                                Wolfdefansy s’appuie sur une dynamique collective forte, où la qualité des engagements 
-                                et la durabilité des actions sont les piliers de notre vision.
-                            </p>
-                        </div>
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-info">
+                        <h1>
+                            <div class="header-icon">
+                                <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
+                            </div>
+                            Join us
+                        </h1>
+                        <p class="header-subtitle">Recruitment process and form</p>
+                        <p class="header-description">
+                            Wolfdefansy is built on strong teamwork, commitment, and sustainable action. We value every
+                            member’s contribution and believe that everyone can bring something unique to the project.
+                            Our recruitment process is designed to be welcoming and supportive, helping you integrate
+                            smoothly and develop your skills at your own pace. Whether you are a beginner or
+                            experienced, your motivation and willingness to learn are what matter most.
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Recruitment steps timeline -->
         <div class="tl-container-unique">
             <section class="timeline-section">
                 <h2 class="timeline-title"></h2>
@@ -1526,42 +1554,43 @@
                     <div class="timeline-card">
                         <div class="timeline-icon">1</div>
                         <div class="timeline-content">
-                            <h3>Candidature</h3>
-                            <p class="align">Dites nous en plus sur votre profil et attendez la validation de notre équipe ! Nous vous recontacterons dans les 24H</p>
+                            <h3>Application</h3>
+                            <p class="align">Tell us about yourself and wait for our team to validate. We reply within
+                                24h.</p>
                         </div>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-icon">2</div>
                         <div class="timeline-content">
                             <h3>Immersion</h3>
-                            <p class="align">Bénéficiez d'une première expérience immersive et inclusive : rencontrez notre équipe, explorez les coulisses et vivez l’esprit de notre association.</p>
+                            <p class="align">Experience our team, discover behind the scenes, and feel our spirit.</p>
                         </div>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-icon">3</div>
                         <div class="timeline-content">
-                            <h3>Entrainement</h3>
-                            <p class="align">Vous avez encore des compétences à développer ? Pas de souci ! Accédez à nos ressources et laissez votre motivation faire la différence</p>
+                            <h3>Training</h3>
+                            <p class="align">Need to improve? Use our resources and let your motivation shine.</p>
                         </div>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-icon">4</div>
                         <div class="timeline-content">
                             <h3>Validation</h3>
-                            <p class="align">Une évaluation vous permettra de faire reconnaître vos compétences et de valider la qualité de votre engagement.</p>
+                            <p class="align">An evaluation will recognize your skills and commitment.</p>
                         </div>
                     </div>
                     <div class="timeline-card">
                         <div class="timeline-icon">5</div>
                         <div class="timeline-content">
-                            <h3>Intégration</h3>
-                            <p class="align">Vous êtes prêt ? Rejoignez pleinement notre équipe, mettez vos talents en action et devenez un acteur clé du projet.</p>
+                            <h3>Integration</h3>
+                            <p class="align">Ready? Join the team, use your talents, and become a key player.</p>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Animated grid background and recruitment info -->
             <div class="text-plane">
-                <!-- effet dans la carte uniquement -->
                 <div class="grid-container">
                     <div class="plane">
                         <div class="grid"></div>
@@ -1572,79 +1601,69 @@
                         <div class="glow"></div>
                     </div>
                 </div>
-
-                <!-- contenu texte au-dessus de la grille -->
                 <div class="recrut-content">
-                    <h1 class="recrut_title">Nous avons besoin de vous !</h1>
-
+                    <h1 class="recrut_title">We need you!</h1>
                     <section>
                         <p>
-                            WolfDeFansy recrute des contributeurs pour le développement de son site web. Le profil
-                            souhaité
-                            n'est pas élitiste, mais les candidats doivent avoir une base en HTML, CSS et
-                            TypeScript/JavaScript.
+                            WolfDeFansy is looking for contributors for its website. You don't need to be elite, but
+                            basic HTML, CSS, and TypeScript/JavaScript are required.
                         </p>
                         <p>
-                            Le projet repose sur <strong>Ionic</strong> (code multi-plateforme) et
-                            <strong>Angular</strong> (bonne séparation du code). Avoir les bases est essentiel, pas
-                            besoin d’être expert.
+                            The project uses <strong>Ionic</strong> (multi-platform) and <strong>Angular</strong> (good
+                            code separation). Basics are enough.
                         </p>
                     </section>
-
                     <section>
-                        <h2 class="recrut_title">Les prérequis</h2>
+                        <h2 class="recrut_title">Prerequisites</h2>
                         <ul>
-                            <li>Connaître les commandes de base de <strong>git</strong> (le repo est sur GitHub)</li>
-                            <li>Avoir des notions de <strong>programmation orientée objet</strong></li>
-                            <li>Savoir styliser un composant à partir d’une maquette (HTML & CSS)</li>
-                            <li>Aimer <strong>travailler en équipe</strong> (partage, communication, bonne humeur)</li>
+                            <li>Know basic <strong>git</strong> commands (repo on GitHub)</li>
+                            <li>Some <strong>object-oriented programming</strong> knowledge</li>
+                            <li>Can style a component from a mockup (HTML & CSS)</li>
+                            <li>Enjoy <strong>teamwork</strong> (sharing, communication, good mood)</li>
                         </ul>
                     </section>
-
                     <section>
                         <p>
-                            Les débutants motivés sont acceptés. Vous bénéficierez du soutien de l'équipe et du Wiki,
-                            qui évoluera selon les besoins. L’apprentissage se fait en collaboration.
+                            Motivated beginners are welcome. The team and Wiki will help you. Learning is collaborative.
                         </p>
-                        <h2 class="recrut_title">Sujets abordés au fil du projet</h2>
+                        <h2 class="recrut_title">Topics covered</h2>
                         <ul>
-                            <li>Création de composants</li>
-                            <li>Création de services (méthodes synchrones/asynchrones)</li>
-                            <li>Gestion des données avec <strong>RxJS</strong> ou <strong>Angular Signals</strong></li>
-                            <li>Réactions aux événements utilisateurs</li>
-                            <li>Affichage dynamique avec les directives Angular</li>
-                            <li>Et bien d’autres sujets passionnants</li>
+                            <li>Component creation</li>
+                            <li>Service creation (sync/async)</li>
+                            <li>Data with <strong>RxJS</strong> or <strong>Angular Signals</strong></li>
+                            <li>User event handling</li>
+                            <li>Dynamic display with Angular</li>
+                            <li>And more!</li>
                         </ul>
                     </section>
-
                     <section>
                         <p>
-                            Pas besoin de tout savoir pour contribuer. L'essentiel est de savoir chercher : dans la doc,
-                            via Google, ou avec Copilot.
+                            You don't need to know everything. The key is knowing how to search: docs, Google, or
+                            Copilot.
                         </p>
                         <p>
-                            Notre équipe est bienveillante. Motivation et implication sont les clés pour progresser avec
-                            nous.
+                            Our team is supportive. Motivation and involvement are the keys to progress.
                         </p>
-                        <p><strong>Ne soyez plus un "loup solitaire", rejoignez la meute…</strong></p>
+                        <p><strong>Don't be a "lone wolf" anymore, join the pack…</strong></p>
                     </section>
                 </div>
             </div>
-
+            <!-- Application button -->
             <div class="formation_selector">
                 <div class="wrapper">
                     <section class="sec01"></section>
                     <section class="sec02">
-                        <div class="alternative">Candidater<a href="https://docs.google.com/forms/d/e/1FAIpQLSf9jtGwfvdHbCXSxLQoWWXmzPJBB84NJ3omkv4WiSRXDDh8cg/viewform?pli=1"
-                                target="_blank">Une nouvelle avanture ?</a></div>
+                        <div class="alternative">Apply<a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSf9jtGwfvdHbCXSxLQoWWXmzPJBB84NJ3omkv4WiSRXDDh8cg/viewform?pli=1"
+                                target="_blank">A new adventure?</a></div>
                     </section>
                     <section class="sec03"></section>
                 </div>
             </div>
-
         </div>
     </div>
 
+    <!-- Resources Page -->
     <div id="ressources" class="page">
         <div class="header">
             <div class="container">
@@ -1654,38 +1673,41 @@
                             <div class="header-icon">
                                 <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
                             </div>
-                            WolfDefansy
+                            Resources
                         </h1>
-                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-subtitle">Learn and practice</p>
                         <p class="header-description">
-                            Centralisez et partagez vos meilleures ressources de formation.
-                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                            Here you’ll find tutorials and resources carefully selected by our team to help you progress
+                            in web development and cybersecurity. Each section is designed to guide you step by step,
+                            from the basics to more advanced concepts, so you can build solid foundations and develop
+                            your skills at your own pace. Whether you’re just starting or looking to deepen your
+                            knowledge, these resources are here to support your journey.
                         </p>
                     </div>
                     <div class="team-info">
-                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-title">Shared resources</div>
                         <div class="team-stats">
                             <div class="team-stat">
                                 <span class="team-stat-number" id="total-videos">0</span>
-                                <span class="team-stat-label">Formations</span>
+                                <span class="team-stat-label">Trainings</span>
                             </div>
                             <div class="team-stat">
                                 <span class="team-stat-number">2</span>
-                                <span class="team-stat-label">Plateformes</span>
+                                <span class="team-stat-label">Platforms</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- Resource sections (HTML, CSS, JS, Angular) -->
         <div class="container">
             <div class="main-content">
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">
                             <div class="section-icon youtube-icon">1</div>
-                            HTML 5: Le squelette des sites webs
+                            HTML 5: The skeleton of websites
                         </h2>
                     </div>
                     <div class="videos-grid">
@@ -1693,37 +1715,37 @@
                             <div class="video-header">
                                 <div class="video-meta">
                                     <span class="video-platform platform-youtube">Grafikart</span>
-                                    <span class="video-duration">17 vidéos</span>
+                                    <span class="video-duration">17 videos</span>
                                 </div>
-                                <h3 class="video-title">Apprendre l'HTML</h3>
+                                <h3 class="video-title">Learn HTML</h3>
                                 <p class="video-description">
-                                    L'HTML, pour HyperText Markup Language, constitue le langage de bases d'un site
-                                    internet. Ce n'est pas un langage de programmation mais un langage de balisage
-                                    qui
-                                    permet d'écrire de l'hypertexte et ainsi de définir la structure sémantique
-                                    d'une
-                                    page web.
+                                    HTML is the foundation of every website. It’s not a programming language, but a
+                                    markup language that lets you structure your content: titles, paragraphs, lists,
+                                    images, and links.<br>
+                                    With HTML, you build the backbone of your pages, giving meaning and order to your
+                                    information. Mastering HTML is the first step to understanding how the web works and
+                                    is essential before learning CSS or JavaScript. It’s the universal language for web
+                                    content, and knowing it lets you read, edit, and create any web page.
                                 </p>
                             </div>
                             <div class="video-footer">
                                 <div class="video-tech">
                                     <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">Débutant</span>
+                                    <span class="tech-tag">Beginner</span>
                                 </div>
                                 <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLUeixVGPNl1uZNeJy4UY6qX"
                                     class="watch-btn">
-                                    Regarder →
+                                    Watch →
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">
                             <div class="section-icon youtube-icon">2</div>
-                            CSS: L'indispensable de la personnalisation
+                            CSS: Essential for customization
                         </h2>
                     </div>
                     <div class="videos-grid">
@@ -1731,38 +1753,36 @@
                             <div class="video-header">
                                 <div class="video-meta">
                                     <span class="video-platform platform-youtube">Grafikart</span>
-                                    <span class="video-duration">31 vidéos</span>
+                                    <span class="video-duration">31 videos</span>
                                 </div>
-                                <h3 class="video-title">Découverte du CSS</h3>
+                                <h3 class="video-title">Discover CSS</h3>
                                 <p class="video-description">
-                                    Le CSS, pour Cascading Style Sheets, est le langage utilisé pour mettre en forme
-                                    les
-                                    éléments d’un site web. Il permet de définir l’apparence des pages — couleurs,
-                                    polices, espacements, animations — en séparant le contenu (HTML) de la
-                                    présentation.
-                                    Grâce au CSS, il est possible d’adapter le rendu visuel d’un site à différents
-                                    écrans et supports, et de créer des interfaces modernes et harmonieuses.
+                                    CSS is what brings style and life to your web pages. It lets you control colors,
+                                    fonts, spacing, and even animations, separating content from presentation.<br>
+                                    With CSS, you can create beautiful layouts, responsive designs, and smooth
+                                    transitions. It adapts your site to all screens—computers, tablets, and phones. CSS
+                                    is the creative layer that makes your HTML unique and user-friendly, allowing you to
+                                    design modern, attractive, and accessible interfaces for everyone.
                                 </p>
                             </div>
                             <div class="video-footer">
                                 <div class="video-tech">
                                     <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">Débutant</span>
+                                    <span class="tech-tag">Beginner</span>
                                 </div>
                                 <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLVjTZQocrMwKicV5wsZlRpj"
                                     class="watch-btn">
-                                    Regarder →
+                                    Watch →
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">
                             <div class="section-icon youtube-icon">3</div>
-                            JS: Entre l'humain et la machine
+                            JS: Between human and machine
                         </h2>
                     </div>
                     <div class="videos-grid">
@@ -1770,67 +1790,63 @@
                             <div class="video-header">
                                 <div class="video-meta">
                                     <span class="video-platform platform-youtube">YouTube</span>
-                                    <span class="video-duration">47 vidéos</span>
+                                    <span class="video-duration">47 videos</span>
                                 </div>
-                                <h3 class="video-title">Apprendre le JavaScript</h3>
+                                <h3 class="video-title">Learn JavaScript</h3>
                                 <p class="video-description">
-                                    Le JavaScript est un langage de programmation orienté objet qui permet de rendre
-                                    les
-                                    pages web interactives et dynamiques. Il complète le duo HTML/CSS en ajoutant
-                                    des
-                                    fonctionnalités comme la gestion des événements, la manipulation du contenu à la
-                                    volée ou la communication avec des serveurs. C’est le moteur derrière les
-                                    animations, les formulaires intelligents, les jeux en ligne, et même certaines
-                                    applications mobiles.
+                                    JavaScript is the language that makes your web pages interactive and dynamic. It
+                                    adds features like events, dynamic content, and communication with servers.<br>
+                                    With JavaScript, you can create menus, forms, games, and real-time updates. It’s the
+                                    programming language behind most modern websites and web apps, letting you build
+                                    engaging user experiences and connect with external data or APIs. Learning JS opens
+                                    the door to advanced web development and interactivity.
                                 </p>
                             </div>
                             <div class="video-footer">
                                 <div class="video-tech">
                                     <span class="tech-tag">JS</span>
-                                    <span class="tech-tag">Intermédiaire</span>
+                                    <span class="tech-tag">Intermediate</span>
                                 </div>
                                 <a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLXgsTQE_1PpRkC_yX47ZcGV"
                                     class="watch-btn">
-                                    Regarder →
+                                    Watch →
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">
                             <div class="section-icon youtube-icon">4</div>
-                            Angular: Du web vers le mobile
+                            Angular: From web to mobile
                         </h2>
                     </div>
                     <div class="videos-grid">
                         <div class="video-card">
                             <div class="video-header">
                                 <div class="video-meta">
-                                    <span class="video-platform platform-youtube">
-                                        Coulisses Tech</span>
-                                    <span class="video-duration">53 vidéos</span>
+                                    <span class="video-platform platform-youtube">Coulisses Tech</span>
+                                    <span class="video-duration">53 videos</span>
                                 </div>
-                                <h3 class="video-title">Apprendre Angular | Introduction à Angular et concepts
-                                    avancés
-                                </h3>
+                                <h3 class="video-title">Learn Angular | Intro & advanced</h3>
                                 <p class="video-description">
-                                    Angular est un framework de développement Web, open-source, développé et géré
-                                    par
-                                    Google. Ce framework a été mis en place pour répondre à la plupart des défis
-                                    rencontrés dans le développement des applications Web à une seule page.
+                                    Angular is a powerful open-source framework by Google for building single-page web
+                                    apps. It helps you organize your code, manage data, and create dynamic
+                                    interfaces.<br>
+                                    With Angular, you can develop complex applications for web and mobile, using modern
+                                    tools and best practices. It’s designed to solve the main challenges of today’s web
+                                    development, making your projects scalable, maintainable, and robust.
                                 </p>
                             </div>
                             <div class="video-footer">
                                 <div class="video-tech">
                                     <span class="tech-tag">Angular</span>
-                                    <span class="tech-tag">Intérmédiaire</span>
+                                    <span class="tech-tag">Intermediate</span>
                                 </div>
                                 <a href="https://www.youtube.com/playlist?list=PLrbLGOB571zeR7FUQifKmjUpT4ImldCPt"
                                     class="watch-btn">
-                                    Regarder →
+                                    Watch →
                                 </a>
                             </div>
                         </div>
@@ -1840,6 +1856,7 @@
         </div>
     </div>
 
+    <!-- Partnerships Page -->
     <div id="partenariat" class="page">
         <div class="header">
             <div class="container">
@@ -1849,82 +1866,85 @@
                             <div class="header-icon">
                                 <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
                             </div>
-                            WolfDefansy
+                            Partnerships
                         </h1>
-                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-subtitle">For companies and associations</p>
                         <p class="header-description">
-                            Centralisez et partagez vos meilleures ressources de formation.
-                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                            Wolfdefansy is always looking for new partners to grow and share knowledge. By working
+                            together, we can create new opportunities, organize events, and support each other’s
+                            projects. Our partnerships are based on trust, mutual benefit, and a shared passion for
+                            cybersecurity and education. Contact us to discuss how we can collaborate and make a
+                            difference together.
                         </p>
                     </div>
                     <div class="team-info">
-                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-title">Shared resources</div>
                         <div class="team-stats">
                             <div class="team-stat">
                                 <span class="team-stat-number" id="total-videos">0</span>
-                                <span class="team-stat-label">Formations</span>
+                                <span class="team-stat-label">Trainings</span>
                             </div>
                             <div class="team-stat">
                                 <span class="team-stat-number">2</span>
-                                <span class="team-stat-label">Plateformes</span>
+                                <span class="team-stat-label">Platforms</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Partnership programs and contact -->
         <div class="cyb-part-container">
             <header class="cyb-part-section-header">
-                <h1 class="cyb-part-section-header-title">Devenez acteurs du projet</h1>
-                
+                <h1 class="cyb-part-section-header-title">Become a project actor</h1>
             </header>
-
             <div class="cyb-part-glass-card">
-                <h2 class="cyb-part-card-title">Pourquoi nous rejoindre ?</h2>
+                <h2 class="cyb-part-card-title">Why join us?</h2>
                 <p>
-                    Nos partenariats sont fondés sur la croissance mutuelle et l'excellence. Nous offrons une expertise de pointe et des outils pour vous aider à prospérer.
+                    Our partnerships are about mutual growth and excellence. Together, we promote solidarity through
+                    non-commercial partnership.<br><br>
                 </p>
                 <ul class="cyb-part-list">
-                    <li class="cyb-part-list-item">Accès privilégié à nos solutions de **cybersécurité** innovantes.</li>
-                    <li class="cyb-part-list-item">Programmes de formation et de certification pour vos équipes commerciales et techniques.</li>
-                    <li class="cyb-part-list-item">Support marketing et opportunités de co-branding pour accroître votre visibilité.</li>
-                    <li class="cyb-part-list-item">Modèles de partenariat flexibles adaptés à votre activité.</li>
+                    <li class="cyb-part-list-item">Boost your visibility with targeted communication.</li>
+                    <li class="cyb-part-list-item">Access technical skills to test or promote your solutions.</li>
+                    <li class="cyb-part-list-item">Support for content or high-value events.</li>
+                    <li class="cyb-part-list-item">Flexible collaboration for your goals.</li>
                 </ul>
             </div>
-
             <div class="cyb-part-glass-card">
-                <h2 class="cyb-part-card-title">Nos Programmes de Partenariat</h2>
+                <h2 class="cyb-part-card-title">Our Partnership Programs</h2>
                 <p>
-                    Que vous soyez un intégrateur, un revendeur ou un éditeur, nous avons un programme conçu pour maximiser votre réussite.
+                    WolfDefansy offers three default collaborations, which can be combined for your needs.
                 </p>
                 <div class="cyb-part-grid-cards">
                     <div class="cyb-part-glass-card">
-                        <h3 class="cyb-part-card-subtitle">Partenaire de Distribution</h3>
-                        <p>Revendez nos solutions de sécurité à vos clients et bénéficiez de marges attractives ainsi que de notre soutien commercial.</p>
+                        <h3 class="cyb-part-card-subtitle">Visibility & Outreach</h3>
+                        <p class="clean">Promote your brand with targeted actions. Get visibility through our channels,
+                            events, and content to reach a qualified audience.</p>
                     </div>
                     <div class="cyb-part-glass-card">
-                        <h3 class="cyb-part-card-subtitle">Partenaire Technologique</h3>
-                        <p>Intégrez notre technologie de pointe à vos propres produits pour enrichir votre offre et innover sur le marché.</p>
+                        <h3 class="cyb-part-card-subtitle">Development</h3>
+                        <p class="clean">Co-create content, organize events, or explore new markets. Collaborate with
+                            our skilled team to enhance your services.</p>
                     </div>
                     <div class="cyb-part-glass-card">
-                        <h3 class="cyb-part-card-subtitle">Partenaire de Conseil</h3>
-                        <p>Bénéficiez de notre expertise pour accompagner vos clients dans leur stratégie de cybersécurité et la mise en œuvre de leurs projets.</p>
+                        <h3 class="cyb-part-card-subtitle">Audit & Security</h3>
+                        <p class="clean">Submit your products or services for security tests (pentests, audits). Get
+                            feedback to fix vulnerabilities and build trust.</p>
                     </div>
                 </div>
             </div>
-
             <div class="cyb-part-glass-card" style="text-align: center;">
-                <h2 class="cyb-part-card-title">Prêt à Collaborer ?</h2>
+                <h2 class="cyb-part-card-title">Ready to Collaborate?</h2>
                 <p>
-                    Contactez notre équipe dédiée aux partenariats pour découvrir comment nous pouvons travailler ensemble pour sécuriser l'avenir.
+                    Contact us to see how we can work together and unite our values.
                 </p>
-                <a href="mailto:contact@wolfdefansy.org" class="cyb-part-cta-button">Soumettre une candidature</a>
+                <a href="mailto:contact@wolfdefansy.org" class="cyb-part-cta-button">Submit an application</a>
             </div>
-
         </div>
-        
     </div>
 
+    <!-- Contact Page -->
     <div id="contact" class="page">
         <div class="header">
             <div class="container">
@@ -1934,37 +1954,39 @@
                             <div class="header-icon">
                                 <img src="pictures/25A01LOGODISC.png" alt="Wolfdefansy logo">
                             </div>
-                            WolfDefansy
+                            Contacts
                         </h1>
-                        <p class="header-subtitle">Espace de partage pour l'équipe développement</p>
+                        <p class="header-subtitle">Contact us easily</p>
                         <p class="header-description">
-                            Centralisez et partagez vos meilleures ressources de formation.
-                            Des tutoriels sélectionnés par l'équipe pour accélérer votre montée en compétences.
+                            Do you have a question, a suggestion, or want to join the adventure? Our team is here to
+                            listen and help you. Fill out the form or send us an email, and we’ll get back to you as
+                            soon as possible. Your feedback and ideas are important to us and help us improve every day.
                         </p>
                     </div>
                     <div class="team-info">
-                        <div class="team-title">Ressources partagées</div>
+                        <div class="team-title">Shared resources</div>
                         <div class="team-stats">
                             <div class="team-stat">
                                 <span class="team-stat-number" id="total-videos">0</span>
-                                <span class="team-stat-label">Formations</span>
+                                <span class="team-stat-label">Trainings</span>
                             </div>
                             <div class="team-stat">
                                 <span class="team-stat-number">2</span>
-                                <span class="team-stat-label">Plateformes</span>
+                                <span class="team-stat-label">Platforms</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Contact form -->
         <div class="container">
             <div class="main-content">
                 <div class="contact-form">
-                    <h2>Nous contacter</h2>
+                    <h2>Contact us</h2>
                     <form action="#" method="post">
                         <div class="form-group">
-                            <label for="name">Nom</label>
+                            <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
@@ -1975,14 +1997,13 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Envoyer</button>
+                        <button type="submit" class="submit-btn">Send</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <!-- ...existing code... -->
     <script>
         // Fonction pour afficher une page et masquer les autres
         function showPage(pageId) {
@@ -2032,49 +2053,49 @@
 
     </script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const cardGrid = document.getElementById("card-grid");
-    const cards = document.querySelectorAll(".animated-card");
+        document.addEventListener("DOMContentLoaded", () => {
+            const cardGrid = document.getElementById("card-grid");
+            const cards = document.querySelectorAll(".animated-card");
 
-    // Détection mobile (largeur inférieure à 768px)
-    const isMobile = window.innerWidth < 768;
+            // Détection mobile (largeur inférieure à 768px)
+            const isMobile = window.innerWidth < 768;
 
-    if (isMobile) {
-        // Sur mobile : afficher directement les cartes sans animation
-        cards.forEach(card => {
-            card.classList.add("is-visible");
-        });
-        return; // Ne pas initialiser l'observer
-    }
-
-    // Sur desktop : animation avec IntersectionObserver
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                cards[1].classList.add("is-visible");
-                cards[2].classList.add("is-visible");
-
-                setTimeout(() => {
-                    cards[0].classList.add("is-visible");
-                    cards[3].classList.add("is-visible");
-                }, 700);
-            } else {
+            if (isMobile) {
+                // Sur mobile : afficher directement les cartes sans animation
                 cards.forEach(card => {
-                    card.classList.remove("is-visible");
+                    card.classList.add("is-visible");
                 });
+                return; // Ne pas initialiser l'observer
             }
-        });
-    }, observerOptions);
 
-    observer.observe(cardGrid);
-});
-</script>
+            // Sur desktop : animation avec IntersectionObserver
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        cards[1].classList.add("is-visible");
+                        cards[2].classList.add("is-visible");
+
+                        setTimeout(() => {
+                            cards[0].classList.add("is-visible");
+                            cards[3].classList.add("is-visible");
+                        }, 700);
+                    } else {
+                        cards.forEach(card => {
+                            card.classList.remove("is-visible");
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(cardGrid);
+        });
+    </script>
 
 
 
@@ -2113,46 +2134,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </script>
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const navContainer = document.querySelector(".navlinks-container");
-    const overlay = document.querySelector(".overlay");
-    const navLinks = document.querySelectorAll(".navlinks");
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const navContainer = document.querySelector(".navlinks-container");
+            const overlay = document.querySelector(".overlay");
+            const navLinks = document.querySelectorAll(".navlinks");
 
-    function toggleMenu() {
-        navContainer.classList.toggle("show");
-        overlay.classList.toggle("show");
-    }
+            function toggleMenu() {
+                navContainer.classList.toggle("show");
+                overlay.classList.toggle("show");
+            }
 
-    function closeMenu() {
-        navContainer.classList.remove("show");
-        overlay.classList.remove("show");
-    }
+            function closeMenu() {
+                navContainer.classList.remove("show");
+                overlay.classList.remove("show");
+            }
 
-    hamburger.addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", closeMenu);
+            hamburger.addEventListener("click", toggleMenu);
+            overlay.addEventListener("click", closeMenu);
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-        closeMenu();
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    closeMenu();
+                });
+            });
         });
-    });
-    });
-    document.addEventListener("click", (event) => {
-  const navContainer = document.querySelector(".navlinks-container");
-  const hamburger = document.querySelector(".hamburger");
+        document.addEventListener("click", (event) => {
+            const navContainer = document.querySelector(".navlinks-container");
+            const hamburger = document.querySelector(".hamburger");
 
-  // Si le menu est ouvert
-  if (navContainer.classList.contains("show")) {
-    // Et si le clic est en dehors du menu ET du bouton hamburger
-    if (!navContainer.contains(event.target) && !hamburger.contains(event.target)) {
-      navContainer.classList.remove("show");
-      document.querySelector(".overlay").classList.remove("show");
-    }
-  }
-});
+            // Si le menu est ouvert
+            if (navContainer.classList.contains("show")) {
+                // Et si le clic est en dehors du menu ET du bouton hamburger
+                if (!navContainer.contains(event.target) && !hamburger.contains(event.target)) {
+                    navContainer.classList.remove("show");
+                    document.querySelector(".overlay").classList.remove("show");
+                }
+            }
+        });
 
-</script>
+    </script>
 
 
 </body>
