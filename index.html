@@ -635,10 +635,13 @@
             gap: 50px;
             padding: 50px;
             margin-top: 20%;
+            width: 100%;
+            flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
         }
 
         .animated-card {
             width: 300px;
+            max-width: 90vw; /* S’adapte à l’écran */
             height: 500px;
             background: rgba(18, 4, 98, 0.185);
             backdrop-filter: blur(15px);
@@ -656,21 +659,32 @@
             color: white;
         }
 
-        .animated-card .card-content {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
+        /* Responsive typography */
         .animated-card h2 {
-            font-size: 2.5em;
+            font-size: clamp(1.5em, 2.5vw, 2.5em);
             margin-bottom: 10px;
             font-weight: 600;
         }
 
         .animated-card p {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: clamp(1em, 2vw, 1.2em);
+            padding-top: 100%;
         }
+
+        /* Media query pour petits écrans */
+        @media (max-width: 600px) {
+            .card-grid {
+                gap: 20px;
+                padding: 20px;
+                margin-top: 10%;
+            }
+
+            .animated-card {
+                height: auto;
+                padding: 20px;
+            }
+        }
+
 
         /* Initial positions for center cards (2 and 3) */
         .animated-card:nth-child(2) {
@@ -1317,6 +1331,7 @@
             <a href="#ressources" class="navlinks" onclick="showPage('ressources')">Formation</a>
             <a href="#partenariat" class="navlinks" onclick="showPage('partenariat')">Partenariats</a>
             <a href="#contact" class="navlinks" onclick="showPage('contact')">Contact</a>
+            <a href="https://wolfdefansy.org" class="navlinks" target="_blank">CTF-TIME</a>
         </nav>
     </div>
 
@@ -1363,21 +1378,21 @@
             <div class="animated-card">
                 <div class="card-content">
                     <p class="align">
-                         WolfDefansy est avant tout pensé pour démocratiser l'acces à l'apprentissage de la cybersécurité, et de le simplifier pedagogiquement. <br> <br>
+                         WolfDefansy est avant tout pensé pour démocratiser l'acces à l'apprentissage de la cybersécurité, et de le simplifier pedagogiquement. <br>
                           Naturellement déstiné aux étudiants, l'objectif du projet est de guider les plus jeunes en leurs proposant un parcous d'aprentissage complet, et centralisé.</p>
                     <h2>Solidarité</h2>
                 </div>
             </div>
             <div class="animated-card">
                 <div class="card-content">
-                    <p class="align">Egalement propulsée par cette flame qu'est notre passion, le projet est en developpment actif, suivi par pres de 25 bénévoles compétents et passionés. <br> <br>
+                    <p class="align">Egalement propulsée par cette flame qu'est notre passion, le projet est en developpment actif, suivi par pres de 25 bénévoles compétents et passionés. <br>
                     Nous acceuillons dans notre équipe, en partie étudiante, des developpeurs, des pentesters, des graphistes et des monteurs vidéos.</p>
                     <h2>Passion</h2>
                 </div>
             </div>
             <div class="animated-card">
                 <div class="card-content">
-                    <p class="align">Car la qualité est l'une de nos préocupations principale, nous employons des méthodes de développement professionelles et structurées. <br><br>
+                    <p class="align">Car la qualité est l'une de nos préocupations principale, nous employons des méthodes de développement professionelles et structurées. <br>
                     Entre autres, nous utilisons slack, github, notion. Nos 5 équipes se constituent de chefs d'équipes, tous ayant une experience professionelle importante.</p>
                     <h2>Rigeure</h2>
                 </div>
@@ -1927,40 +1942,50 @@
 
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const cardGrid = document.getElementById("card-grid");
-            const cards = document.querySelectorAll(".animated-card");
+document.addEventListener("DOMContentLoaded", () => {
+    const cardGrid = document.getElementById("card-grid");
+    const cards = document.querySelectorAll(".animated-card");
 
-            const observerOptions = {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0.5
-            };
+    // Détection mobile (largeur inférieure à 768px)
+    const isMobile = window.innerWidth < 768;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // The center cards (2 and 3) appear first
-                        cards[1].classList.add("is-visible");
-                        cards[2].classList.add("is-visible");
-
-                        // Then the outer cards (1 and 4)
-                        setTimeout(() => {
-                            cards[0].classList.add("is-visible");
-                            cards[3].classList.add("is-visible");
-                        }, 700);
-                    } else {
-                        // Reset the cards when the container is no longer visible
-                        cards.forEach(card => {
-                            card.classList.remove("is-visible");
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            observer.observe(cardGrid);
+    if (isMobile) {
+        // Sur mobile : afficher directement les cartes sans animation
+        cards.forEach(card => {
+            card.classList.add("is-visible");
         });
-    </script>
+        return; // Ne pas initialiser l'observer
+    }
+
+    // Sur desktop : animation avec IntersectionObserver
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cards[1].classList.add("is-visible");
+                cards[2].classList.add("is-visible");
+
+                setTimeout(() => {
+                    cards[0].classList.add("is-visible");
+                    cards[3].classList.add("is-visible");
+                }, 700);
+            } else {
+                cards.forEach(card => {
+                    card.classList.remove("is-visible");
+                });
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(cardGrid);
+});
+</script>
+
 
 
 
