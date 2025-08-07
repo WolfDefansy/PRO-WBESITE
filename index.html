@@ -438,36 +438,61 @@
             display: none;
         }
 
-        .hamburger {
-        display: none;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        }
+       .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-        .navlinks-container {
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background-color: rgba(5, 3, 33, 0.95);
-            flex-direction: column;
-            width: 200px;
-            display: none;
-            padding: 20px;
-        }
+/* Overlay flouté */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
 
-        .navlinks-container.show {
-            display: flex;
-        }
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navlinks-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(5, 3, 33, 0.95);
+    flex-direction: row;
+    padding: 80px 20px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+    justify-content: left;
+  }
 
-        .hamburger {
-            display: block;
-        }
-        }
+  .navlinks-container.show {
+    right: 0;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 
         .active-page {
             display: block;
@@ -1356,6 +1381,7 @@
     <div class="navbar-header">
         <nav class="nav">
             <button class="hamburger" aria-label="Menu">&#9776;</button>
+            <div class="overlay"></div>
             <div class="navlinks-container">
             <a href="#accueil" class="navlinks" onclick="showPage('accueil')">Le projet</a>
             <a href="#recrutement" class="navlinks" onclick="showPage('recrutement')">Recrutement</a>
@@ -2059,12 +2085,30 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navContainer = document.querySelector(".navlinks-container");
+    const overlay = document.querySelector(".overlay");
+    const navLinks = document.querySelectorAll(".navlinks");
 
-    hamburger.addEventListener("click", () => {
+    function toggleMenu() {
         navContainer.classList.toggle("show");
+        overlay.classList.toggle("show");
+    }
+
+    function closeMenu() {
+        navContainer.classList.remove("show");
+        overlay.classList.remove("show");
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+        closeMenu();
+        });
     });
     });
-    </script>
+</script>
+
 
 </body>
 
