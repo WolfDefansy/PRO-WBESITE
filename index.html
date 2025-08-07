@@ -2138,6 +2138,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     });
+    document.addEventListener("click", (event) => {
+  const navContainer = document.querySelector(".navlinks-container");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Si le menu est ouvert
+  if (navContainer.classList.contains("show")) {
+    // Et si le clic est en dehors du menu ET du bouton hamburger
+    if (!navContainer.contains(event.target) && !hamburger.contains(event.target)) {
+      navContainer.classList.remove("show");
+      document.querySelector(".overlay").classList.remove("show");
+    }
+  }
+});
+
 </script>
 
 
